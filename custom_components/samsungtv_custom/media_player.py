@@ -202,7 +202,7 @@ class SamsungTVDevice(MediaPlayerEntity):
         }
         self._sourcelist = sourcelist
         
-        if self._token is not None and != "":
+        if self._token is not None and self._token != "":
             self._config["method"] = "encrypted"
         elif self._config["port"] in (8001, 8002):
             self._config["method"] = "websocket"
