@@ -6,18 +6,14 @@
 
 # HomeAssistant - SamsungTV Custom Component
 
-This is a custom component to allow control of SamsungTV devices in [HomeAssistant](https://home-assistant.io). Is a modified version of the built-in [samsungtv](https://www.home-assistant.io/integrations/samsungtv/) with some extra features:
+This is a custom component to allow control of SamsungTV devices in [HomeAssistant](https://home-assistant.io). Is a modified version of the built-in [samsungtv](https://www.home-assistant.io/integrations/samsungtv/) based on [ha-samsungtv-custom](https://github.com/roberodin/ha-samsungtv-custom) which appears unmaintained. 
 
-# Additional Features:
+# Modifications
 
-* Send keys using a native Home Assistant service
-* Customize source list at media player dropdown list
-* Change communication protocol to cover more compatibility TV models. Thanks to:
-    - WS protocol from [@xchwarze](https://github.com/xchwarze/ha-samsungtv-custom)
-    - Qled protocol from [@giefca](https://github.com/giefca/ha-samsungtv-qled)
-    - Ctl beta from [@kdschlosser](https://github.com/kdschlosser/samsungctl)
-* Launch applications and add them to the source list (only for Qled protocol)
-* Launch streaming of music and video from files (not compatible with HA stream component, only for Qled protocol)
+* For F-series TV: prevent sending duplicate keys, uses legacy protocol (fixes applied).
+* Manifest.json updated to reflect Home Assistant changes (version, requirements and dependancies).
+
+Please note this version is only tested on F-series TV and other protocols (for instance QLED) may be broken!
 
 ![N|Solid](https://i.imgur.com/8mCGZoO.png)
 ![N|Solid](https://i.imgur.com/t3e4bJB.png)
