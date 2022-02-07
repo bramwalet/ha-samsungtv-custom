@@ -492,14 +492,14 @@ class SamsungTVDeviceQLED(MediaPlayerEntity):
             return
         try:
             # recreate connection if connection was dead
-            retry_count = 1
-            for _ in range(retry_count + 1):
-                try:
-                    self.get_remote().control(key)
-                    break
-                except (self._exceptions_class.ConnectionClosed, BrokenPipeError):
-                    # BrokenPipe can occur when the commands is sent to fast
-                    self._remote = None
+            #retry_count = 1
+            #for _ in range(retry_count + 1):
+            #    try:
+            self.get_remote().control(key)
+            #        break
+            #    except (self._exceptions_class.ConnectionClosed, BrokenPipeError):
+            #        # BrokenPipe can occur when the commands is sent to fast
+            #        self._remote = None
             self._state = STATE_ON
         except (
             self._exceptions_class.UnhandledResponse,
