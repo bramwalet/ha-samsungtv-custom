@@ -241,20 +241,20 @@ class SamsungTVDevice(MediaPlayerEntity):
             _LOGGER.info("TV is powering off, not sending command: %s", key)
             return
         try:
-            # recreate connection if connection was dead
-            retry_count = 1
-            for _ in range(retry_count + 1):
-                try:
-                    control_result = self.get_remote().control(key)
-                    if not control_result:
-                        _LOGGER.debug("Failed sending command %s. Retry!", key)
-                        self._remote.close()
-                        self._remote = None
-                        self.get_remote().control(key)
-                    break
-                except (self._exceptions_class.ConnectionClosed, BrokenPipeError):
-                    # BrokenPipe can occur when the commands is sent to fast
-                    self._remote = None
+        #    # recreate connection if connection was dead
+        #    retry_count = 1
+        #    for _ in range(retry_count + 1):
+        #        try:
+            control_result = self.get_remote().control(key)
+        #            if not control_result:
+        #                _LOGGER.debug("Failed sending command %s. Retry!", key)
+        #                self._remote.close()
+        #                self._remote = None
+        #                self.get_remote().control(key)
+        #            break
+        #        except (self._exceptions_class.ConnectionClosed, BrokenPipeError):
+        #            # BrokenPipe can occur when the commands is sent to fast
+        #            self._remote = None
             self._state = STATE_ON
         except (
             self._exceptions_class.UnhandledResponse,
